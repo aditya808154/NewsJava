@@ -1,16 +1,44 @@
-# React + Vite
+# 📰 DayNightNews - Full Stack Real-Time News Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, dynamic news engine developed for **DayNightNews**. This project features a robust **Java Spring Boot** backend and a modern **React** frontend to deliver real-time news updates and magazine editions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📖 Project Overview
+This project is built to handle high-frequency news updates with a focus on scalability. It includes a secure Admin Dashboard for content management and an optimized reader interface for a seamless news-consuming experience.
 
-## Expanding the ESLint configuration
+![DayNightNews Portal](https://porportfolio-asik.vercel.app/assets/img3-DQS5crLT.webp)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Key Features:
+*   **Dynamic News Feed:** Real-time fetching of news using Java REST APIs.
+*   **Admin Control Panel:** Secure backend to add, edit, and delete news articles.
+*   **JWT Authentication:** Secure login for editors and administrators.
+*   **Category Management:** Dynamic filtering for National, International, and Local news.
+*   **SEO & Performance:** Optimized for high Lighthouse scores and fast mobile indexing.
+
+---
+
+## 🛠 Tech Stack Used
+
+### Frontend:
+*   **React.js (Vite):** For a fast and reactive User Interface.
+*   **Modern CSS:** Glassmorphism and Responsive Grid layouts.
+
+### Backend:
+*   **Java (Spring Boot):** REST API development and business logic.
+*   **Spring Security:** For securing the admin dashboard and data.
+*   **MySQL / PostgreSQL:** Robust relational database for storing news content.
+
+---
+
+## 📂 How to Run this Project
+
+### 1. Backend (Java)
+1. Clone the repository.
+2. Configure your `application.properties` with your database credentials.
+3. Run the Spring Boot application using Maven:
+   ```bash
+   mvn spring-boot:run
