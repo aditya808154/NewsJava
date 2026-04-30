@@ -1,0 +1,276 @@
+/* GLOBAL RESET & SCROLL */
+body {
+    overflow-x: hidden;
+}
+
+/* --- POPULAR SECTION --- */
+.popular {
+    padding: 60px 0;
+    background: #f7f9fc;
+}
+
+/* --- HEADING STYLE --- */
+.heading {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 0 15px;
+}
+
+.heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.heading hr {
+    width: 50px;
+    height: 4px;
+    background: #bb1919;
+    border: none;
+    margin: 0;
+}
+
+/* --- SLIDER WRAPPER --- */
+.popular-slider-wrapper {
+    width: 95%;
+    max-width: 1200px; /* Increased for 3 cards */
+    margin: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* --- CARD BOX STYLE --- */
+
+/* 🔥 Equal Height Fix */
+.slick-track {
+    display: flex !important;
+    align-items: stretch; 
+}
+
+.popular .items {
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex; 
+    height: auto;
+}
+
+.popular .box {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    height: 100%; 
+    min-height: 450px; /* Sabhi cards ki height same rahegi */
+    width: 100%;
+    cursor: pointer;
+}
+
+.popular .box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- IMAGE AREA --- */
+.popular .images {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background: #ebebeb;
+    flex-shrink: 0; 
+}
+
+.popular .images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Contain ki jagah cover taaki cards fill lagein */
+    transition: transform 0.5s ease;
+    object-position: center; 
+}
+
+.popular .box:hover .images img {
+    transform: scale(1.05); 
+}
+
+/* --- CATEGORY TAG --- */
+.popular .category span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #bb1919;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+/* --- TEXT CONTENT --- */
+.popular .text {
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* ⭐ Title 2-lines max */
+.popular .title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #1c1c1c !important;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Title 2 lines max */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 50px; 
+}
+
+/* 📝 SUMMARY: Strictly 1 Line */
+.slider-desc {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    white-space: nowrap; /* Text ko wrap nahi hone dega */
+    overflow: hidden; /* Extra text chupa dega */
+    text-overflow: ellipsis; /* ... show karega */
+    display: block;
+    width: 100%;
+}
+
+/* --- META INFO --- */
+.meta-info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; 
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.85em;
+    color: #777;
+}
+
+/* --- NEW: SEE MORE NEWS BUTTON --- */
+.see-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.see-more-btn {
+    background: transparent;
+    color: #1c1c1c;
+    border: 2px solid #1c1c1c;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background: #bb1919;
+    color: #fff;
+    border-color: #bb1919;
+}
+
+/* --- NEWS MODAL STYLES --- */
+.news-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 10px; 
+}
+
+.news-modal-content {
+    background: #ffffff;
+    border-radius: 12px;
+    width: 95%; 
+    max-width: 850px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    max-height: 95vh; 
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #bb1919;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: #000;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+.modal-body {
+    padding: 30px; 
+}
+
+.modal-title {
+    font-size: 2em; 
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.modal-full-content {
+    font-size: 1.1em; 
+    line-height: 1.8;
+    color: #333; 
+    white-space: pre-wrap; /* Paragaraphs preserve karega */
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .heading h2 { font-size: 26px; }
+    .see-more-btn { padding: 10px 25px; font-size: 14px; }
+    .news-modal-content { width: 100%; height: 100%; max-height: 100vh; border-radius: 0; }
+    .modal-header { height: 250px; }
+    .popular .box { min-height: 400px; } /* Mobile adjust */
+}

@@ -1,0 +1,113 @@
+/* Desktop Header */
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.desktop-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.desktop-item {
+  position: relative;
+}
+
+.desktop-item a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 10px;
+}
+
+.desktop-item a:hover,
+.desktop-item a.active {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
+/* DROPDOWN FIXED */
+.desktop-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px 0;
+  /* ड्रॉपडाउन की चौड़ाई को इमेज साइज़ के अनुसार समायोजित किया गया */
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 999;
+}
+
+/* SHOW DROPDOWN */
+.desktop-item:hover .desktop-dropdown {
+  display: block;
+}
+
+/* Dropdown Items */
+.desktop-dropdown li {
+  padding: 8px 15px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.desktop-dropdown li a {
+  color: #333;
+  flex-grow: 1;
+  padding: 0;
+}
+
+.desktop-dropdown li:hover {
+  background: #f4f4f4;
+}
+
+/* ⭐ MODIFIED: सबमेनू इमेज स्टाइल (Width और Height 50px की गई) */
+.dropdown-sub-image {
+  width: 50px;
+  /* ✅ INCREASED to 50px */
+  height: 50px;
+  /* ✅ INCREASED to 50px */
+  object-fit: cover;
+  /* कंटेनर को भरने के लिए 'contain' से 'cover' में बदला गया */
+  margin-right: 12px;
+  /* टेक्स्ट से थोड़ी अधिक दूरी */
+  border-radius: 4px;
+  /* इमेजेज़ को एक softer look देने के लिए */
+}
+
+
+/* SUB-DROPDOWN FIXED */
+.nested-dropdown {
+  position: relative;
+  padding-right: 10px;
+}
+
+.desktop-sub-dropdown {
+  position: absolute;
+  /* सब-ड्रॉपडाउन की position को मेन ड्रॉपडाउन की नई width के अनुसार समायोजित किया गया */
+  left: 220px;
+  top: 0;
+  background: #fff;
+  width: 170px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 9999;
+}
+
+/* SHOW SUB DROPDOWN */
+.nested-dropdown:hover .desktop-sub-dropdown {
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+}

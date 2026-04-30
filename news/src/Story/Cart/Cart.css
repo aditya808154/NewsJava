@@ -1,0 +1,305 @@
+/* Cart.css */
+
+.ns-cart-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7; /* Light Gray Background */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Har phone me fit aane ke liye ye lines zaroori hain */
+    box-sizing: border-box; 
+    width: 95%; 
+}
+
+.ns-cart-main-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #1a1a1a; 
+    padding-bottom: 10px;
+    border-bottom: 4px solid #dc2626; /* Strong Red Separator */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Cart Content Layout (Items and Summary side-by-side) --- */
+.ns-cart-content-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.ns-cart-items-list {
+    flex: 3; /* Cart items list takes more width */
+}
+
+/* --- Cart Item Card --- */
+.ns-cart-item-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff; /* White card background */
+    border-left: 5px solid #cccccc; /* Gray left border */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.ns-cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Phone pe image pichke na */
+}
+
+.ns-item-details {
+    flex-grow: 1;
+    min-width: 150px;
+}
+
+.ns-item-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.ns-item-price {
+    font-size: 0.9em;
+    color: #dc2626; /* Red Price */
+    font-weight: bold;
+}
+
+/* Quantity Control */
+.ns-item-quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 20px;
+}
+.ns-quantity-input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Item Subtotal */
+.ns-item-subtotal {
+    margin-right: 20px;
+    text-align: right;
+}
+.ns-subtotal-label {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+}
+.ns-subtotal-amount {
+    font-weight: bold;
+    color: #1a1a1a;
+    font-size: 1.1em;
+}
+
+/* Remove Button */
+.ns-remove-button {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: color 0.2s;
+    padding: 5px;
+}
+.ns-remove-button:hover {
+    color: #1a1a1a;
+}
+
+/* --- Order Summary Section --- */
+.ns-order-summary {
+    flex: 1; /* Order summary takes less width */
+    background-color: #1a1a1a; /* Black background for summary */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content; /* Only take required height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    min-width: 280px;
+}
+
+.ns-summary-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dc2626; /* Red line */
+}
+
+.ns-summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #cccccc; /* Gray text */
+}
+
+.ns-summary-total-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #555;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.ns-total-label {
+    color: #ffffff;
+}
+
+.ns-total-amount {
+    color: #dc2626; /* Red total amount */
+}
+
+.ns-checkout-button {
+    width: 100%;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+
+.ns-checkout-button:hover {
+    background-color: #b91c1c;
+}
+
+/* Empty Cart Message */
+.ns-empty-cart {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #666;
+}
+.ns-empty-cart a {
+    color: #dc2626;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Continue Shopping Link */
+.ns-continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.ns-continue-shopping:hover {
+    color: #dc2626;
+}
+
+/* --- Responsive Design (Har Screen Par Fit Aayega) --- */
+@media (max-width: 900px) {
+    .ns-cart-content-wrapper {
+        flex-direction: column; /* Summary niche aa jayegi */
+    }
+    .ns-order-summary {
+        order: -1; /* Mobile pe summary pehle dikhegi (optional, niche chahiye to is line ko hata de) */
+        width: 100%;
+    }
+    .ns-cart-item-card {
+        display: grid;
+        grid-template-columns: 80px 1fr 100px; 
+        grid-template-areas: 
+            "img details subtotal"
+            "img quantity remove";
+        gap: 10px;
+    }
+    .ns-item-quantity-control {
+        grid-area: quantity;
+        justify-self: start;
+        margin-right: 0;
+    }
+    .ns-item-subtotal {
+        grid-area: subtotal;
+        text-align: right;
+        margin-right: 0;
+    }
+    .ns-remove-button {
+        grid-area: remove;
+        justify-self: end;
+        align-self: end;
+    }
+}
+
+@media (max-width: 600px) {
+    .ns-cart-container {
+        padding: 10px;
+        margin: 10px auto;
+        width: 100%; /* Pure screen width */
+        border-radius: 0; 
+    }
+    .ns-cart-main-title {
+        font-size: 1.6em;
+    }
+    .ns-cart-item-card {
+        grid-template-columns: 70px 1fr;
+        grid-template-areas: 
+            "img details"
+            "quantity subtotal"
+            "remove remove";
+        padding: 10px;
+    }
+    .ns-cart-item-image {
+        width: 70px;
+        height: 70px;
+    }
+    .ns-item-details {
+        min-width: auto;
+    }
+    .ns-item-subtotal {
+        text-align: right;
+    }
+    .ns-remove-button {
+        justify-self: stretch; /* Pura button click area cover karega */
+        text-align: center;
+        background: #fff5f5;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+}
+
+/* Ultra Small Phones (Jese purane iPhone) */
+@media (max-width: 350px) {
+    .ns-cart-item-card {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "img"
+            "details"
+            "quantity"
+            "subtotal"
+            "remove";
+        text-align: center;
+    }
+    .ns-cart-item-image {
+        margin: 0 auto;
+    }
+    .ns-item-quantity-control, .ns-item-subtotal {
+        justify-self: center;
+        text-align: center;
+    }
+}

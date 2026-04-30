@@ -1,0 +1,343 @@
+/* ==================================================
+Live.css – Professional News Website (TV + Digital)
+Inspired by AajTak / BBC / NDTV / CNN layouts
+================================================== */
+
+/* ---------------- Root Theme ---------------- */
+:root {
+  --primary-color: #d71920;         /* Breaking Red */
+  --secondary-color: #111111;       /* Deep Black */
+  --accent-blue: #0b5ed7;           /* Links / Highlights */
+  --background-light: #ffffff;
+  --background-soft: #f4f6f8;
+  --border-color: #e2e2e2;
+  --text-dark: #1c1c1c;
+  --text-muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-soft);
+}
+
+/* ---------------- Main Container ---------------- */
+.ns-live-news-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* Navbar ke niche se shuru karne ke liye padding */
+  padding: 20px 16px 40px; 
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------------- Page Title ---------------- */
+.ns-live-main-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--secondary-color);
+  margin: 24px 0 20px;
+  position: relative;
+}
+
+.ns-live-main-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 90px;
+  height: 4px;
+  background: var(--primary-color);
+}
+
+/* ---------------- Breaking News Ticker ---------------- */
+.ns-breaking-ticker {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #000, #1a1a1a);
+  color: #fff;
+  margin: 0 -16px 20px;
+  padding: 10px 0;
+  
+  /* 🔥 UPDATE: Sticky position fixed */
+  position: sticky;
+  top: 70px; /* Aapke Navbar ki height ke barabar rakhein */
+  z-index: 100; /* Navbar se kam lekin baaki content se zyada */
+}
+
+.ns-ticker-label {
+  background: var(--primary-color);
+  padding: 10px 18px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ns-ticker-content {
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------------- Layout ---------------- */
+.ns-live-content-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1.1fr;
+  gap: 28px;
+}
+
+/* ---------------- Section Header ---------------- */
+.ns-section-header {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+  padding-left: 10px;
+  border-left: 5px solid var(--primary-color);
+}
+
+/* ---------------- Detail View ---------------- */
+.ns-detail-view-container {
+  background: var(--background-light);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.ns-media-player-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+}
+
+.ns-video-player,
+.ns-image-viewer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ns-text-details {
+  padding: 22px 24px 26px;
+}
+
+.ns-detail-source {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ns-detail-headline {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 8px 0 14px;
+  color: var(--secondary-color);
+}
+
+.ns-detail-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+}
+
+.ns-close-detail {
+  margin-top: 20px;
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ns-close-detail:hover {
+  background: var(--primary-color);
+}
+
+.ns-detail-placeholder {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--background-light);
+}
+
+/* ---------------- News Grid ---------------- */
+.ns-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.ns-content-card {
+  background: var(--background-light);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ns-content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.ns-card-media {
+  position: relative;
+  padding-bottom: 56.25%;
+  background: #000;
+}
+
+.ns-card-thumbnail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ns-play-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(215,25,32,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.85);
+}
+
+.ns-card-info {
+  padding: 14px 16px 18px;
+}
+
+.ns-card-source {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.ns-card-headline {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-top: 6px;
+  line-height: 1.35;
+  color: var(--secondary-color);
+}
+
+/* ---------------- Load More ---------------- */
+.ns-load-more-wrapper {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.ns-load-more-button {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 12px 34px;
+  border-radius: 30px;
+  font-weight: 800;
+  border: none;
+}
+
+/* ---------------- Sidebar ---------------- */
+.ns-trending-sidebar {
+  /* 🔥 UPDATE: Sidebar sticky position fix */
+  position: sticky;
+  top: 130px; /* Navbar + Ticker ki height ke baad rukega */
+  align-self: start;
+}
+
+.ns-sidebar-box {
+  background: var(--background-light);
+  border-radius: 10px;
+  padding: 18px 18px 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 22px;
+}
+
+/* FIX: list reset for existing JSX */
+.ns-trending-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ns-trending-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.ns-trending-item:last-child {
+  border-bottom: none;
+}
+
+.ns-rank {
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+.ns-topic-title {
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.ns-topic-title:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.ns-topic-count {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ns-video-placeholder {
+  background: #000;
+  color: #fff;
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .ns-live-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .ns-live-main-title {
+    font-size: 1.9rem;
+  }
+
+  .ns-detail-headline {
+    font-size: 1.4rem;
+  }
+
+  .ns-breaking-ticker {
+    top: 60px; /* Mobile navbar thoda chota ho toh */
+  }
+}

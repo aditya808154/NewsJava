@@ -1,0 +1,267 @@
+/* Checkout.css */
+
+.ns-checkout-container {
+    max-width: 1000px; /* Wider container for checkout */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f7f7f7; 
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Mobile ke liye added: */
+    box-sizing: border-box;
+    width: 95%; /* Side se thodi jagah chhodega */
+}
+
+.ns-checkout-main-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #1a1a1a; 
+    padding-bottom: 10px;
+    border-bottom: 4px solid #dc2626; 
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Layout: Form and Summary side-by-side --- */
+.ns-checkout-form-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+/* Shipping and Payment Sections (Left/Main area) */
+.ns-shipping-section, 
+.ns-payment-section {
+    flex: 2; 
+    min-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px; 
+    box-sizing: border-box; /* Padding handling */
+}
+
+/* Summary Section (Right/Sidebar area) */
+.ns-summary-section {
+    flex: 1; 
+    min-width: 250px;
+    max-width: 350px;
+    padding: 20px;
+    background-color: #1a1a1a; /* Black background */
+    color: #ffffff;
+    border-radius: 8px;
+    height: fit-content; 
+    position: sticky; 
+    top: 40px;
+    box-sizing: border-box;
+}
+
+.ns-checkout-step-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #dc2626; /* Red step title */
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee; 
+}
+.ns-summary-section .ns-checkout-step-title {
+    color: #ffffff; 
+    border-bottom-color: #555;
+}
+
+/* --- Form Styling --- */
+.ns-form-group {
+    margin-bottom: 15px;
+}
+
+.ns-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.ns-form-group input[type="text"],
+.ns-form-group input[type="email"],
+.ns-form-group select {
+    width: 100%;
+    padding: 12px; /* Thoda bada padding touch ke liye */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* 16px font se mobile input zoom nahi hota */
+    box-sizing: border-box;
+}
+
+.ns-form-row {
+    display: flex;
+    gap: 20px;
+}
+.ns-form-row .half-width {
+    flex: 1;
+}
+
+/* --- Payment Method Styles --- */
+
+.ns-payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ns-payment-option-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    color: #1a1a1a;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 0; /* Touch area increase kiya */
+}
+
+/* Conditional Forms Wrapper */
+.ns-card-details-form,
+.ns-upi-details-form,
+.ns-cod-message {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.ns-payment-info {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.ns-note {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Highlight for COD message */
+.ns-cod-message {
+    padding: 15px;
+    background-color: #fcebeb; 
+    border: 1px solid #dc2626;
+    border-radius: 4px;
+}
+
+/* --- Summary Details --- */
+.ns-checkout-items-list {
+    margin-bottom: 15px;
+}
+.ns-checkout-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+.ns-checkout-breakdown {
+    padding: 15px 0;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    margin: 15px 0;
+}
+.ns-checkout-breakdown .ns-summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: #cccccc;
+}
+.ns-checkout-breakdown .tax {
+    color: #dc2626; 
+    font-weight: 600;
+}
+
+.ns-checkout-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.ns-total-amount {
+    color: #dc2626;
+}
+
+/* --- Final Action Button --- */
+.ns-place-order-button {
+    width: 100%;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    border-radius: 6px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ns-place-order-button:hover {
+    background-color: #b91c1c;
+}
+
+.ns-security-note {
+    text-align: center;
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 15px;
+}
+
+/* --- Responsive Design (Enhanced for all phones) --- */
+@media (max-width: 900px) {
+    .ns-checkout-container {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    .ns-checkout-form-wrapper {
+        flex-direction: column;
+    }
+    .ns-summary-section {
+        order: -1; /* Summary ko mobile pe pehle dikhana payment se pehle better hota hai */
+        position: static; 
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .ns-shipping-section, 
+    .ns-payment-section {
+        order: 0;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .ns-checkout-main-title {
+        font-size: 1.6em;
+    }
+    .ns-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .ns-checkout-step-title {
+        font-size: 1.3em;
+    }
+    .ns-place-order-button {
+        font-size: 1.1em;
+        padding: 12px 0;
+    }
+}
+
+/* Extra Small Phones */
+@media (max-width: 380px) {
+    .ns-checkout-total {
+        font-size: 1.1em;
+    }
+    .ns-shipping-section, .ns-payment-section {
+        padding: 15px;
+    }
+}

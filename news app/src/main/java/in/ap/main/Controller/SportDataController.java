@@ -1,0 +1,51 @@
+package in.ap.main.Controller;
+
+import in.ap.main.Service.SportDataService;
+import in.ap.main.entity.SportData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/sport-news")
+public class SportDataController {
+
+    @Autowired
+    private SportDataService service;
+
+    // Frontend Layout Fetch (GET)
+    @GetMapping("/layout")
+    public ResponseEntity<Map<String, Object>> getLayout() {
+        return ResponseEntity.ok(service.getSportFullLayout());
+    }
+
+    // CREATE (POST)
+    @PostMapping("/add")
+    public SportData add(@RequestBody SportData data) {
+        return service.save(data);
+    }
+
+    // UPDATE (PUT)
+    @PutMapping("/update/{id}")
+    public ResponseEntity<SportData> update(@PathVariable String id, @RequestBody SportData newData) {
+        return service.getById(id).map(item -> {
+            item.setTitle(newData.getTitle());
+            item.setSummary(newData.getSummary());
+            item.setCategory(newData.getCategory());
+            item.setImageUrl(newData.getImageUrl());
+            item.setSection(newData.getSection());
+            item.setTime(newData.getTime());
+            item.setType(newData.getType());
+            item.setVideoUrl(newData.getVideoUrl());
+            return ResponseEntity.ok(service.save(item));
+        }).orElse(ResponseEntity.notFound().build());
+    }
+
+    // DELETE (DELETE)
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable String id) {
+        service.delete(id);
+        return "Sport item deleted successfully";
+    }
+}

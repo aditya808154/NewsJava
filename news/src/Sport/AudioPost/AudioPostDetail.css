@@ -1,0 +1,375 @@
+/* AudioPostDetail.css - Styling for Audio Post Detail Page */
+
+/* --- Base Layout & Structure --- */
+.ap-page-container {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #1a202c;
+    /* Box sizing ensures padding doesn't add to width */
+    box-sizing: border-box; 
+    overflow-x: hidden; 
+}
+
+.ap-main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- MAIN CONTENT (LEFT) --- */
+.ap-main-content {
+    padding: 30px;
+    /* Prevent content overflow in grid */
+    min-width: 0; 
+}
+
+.ap-post-title {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    /* Fix for long titles on mobile */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Post Meta Styling */
+.ap-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0; 
+    font-size: 0.9em;
+    color: #718096;
+    /* Allow wrapping on small screens */
+    flex-wrap: wrap;
+}
+
+.ap-meta-item i {
+    color: #dc2626; 
+}
+
+/* --- Audio Player Section --- */
+.ap-audio-player-wrapper {
+    width: 100%;
+    margin-bottom: 20px; 
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ap-audio-element {
+    width: 100%;
+    background-color: #f1f3f4;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.ap-no-audio {
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #a0aec0;
+    background-color: #eee;
+    border-radius: 6px;
+}
+
+/* --- Thumbnail List Styles (Episodes) --- */
+.ap-thumbnail-list-container {
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.ap-thumbnail-list-container h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a202c;
+}
+
+.ap-thumbnail-list {
+    display: flex;
+    overflow-x: auto; 
+    gap: 15px;
+    padding-bottom: 10px; 
+    scrollbar-width: thin;
+    scrollbar-color: #e2e8f0 transparent;
+    /* Smooth scrolling on mobile */
+    -webkit-overflow-scrolling: touch; 
+}
+
+.ap-thumbnail-list::-webkit-scrollbar {
+    height: 8px;
+}
+.ap-thumbnail-list::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.ap-thumbnail-item {
+    flex-shrink: 0; 
+    width: 220px; 
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    background-color: #fff;
+}
+
+.ap-thumbnail-item:hover {
+    border-color: #fbd38d; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ap-thumbnail-item.active {
+    border-color: #dc2626; 
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.2);
+}
+
+.ap-thumbnail-image {
+    width: 100%;
+    height: 125px; 
+    object-fit: cover;
+    display: block;
+}
+
+.ap-thumbnail-title {
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 10px 8px;
+    line-height: 1.3;
+    color: #1a202c;
+    background-color: #fcfcfc;
+    margin: 0;
+    height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ap-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.ap-thumbnail-item:hover .ap-play-overlay,
+.ap-thumbnail-item.active .ap-play-overlay {
+    opacity: 1;
+}
+
+.ap-play-icon {
+    font-size: 2em;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.9); 
+}
+
+/* --- Content, Footer & Tags --- */
+.ap-post-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 30px;
+    /* Force long words to break */
+    overflow-wrap: break-word;
+}
+
+.ap-post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ap-social-share {
+    display: flex;
+    gap: 15px;
+}
+
+.ap-social-icon {
+    font-size: 1.2em;
+    color: #718096;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.ap-social-icon:hover {
+    color: #dc2626; 
+}
+
+.ap-tags-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    flex-wrap: wrap;
+}
+
+.ap-tag-label {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.ap-tag-item {
+    text-decoration: none;
+    color: #dc2626; 
+    padding: 2px 8px;
+    border: 1px solid #dc2626; 
+    border-radius: 15px;
+    transition: background-color 0.2s;
+}
+
+.ap-tag-item:hover {
+    background-color: #fef2f2; 
+}
+
+/* Comments Section & Form */
+.ap-comments-section { padding-top: 20px; }
+.ap-comments-count { font-size: 1.1em; font-weight: 700; margin-bottom: 20px; overflow-wrap: break-word; }
+.ap-comment-item { display: flex; gap: 15px; padding: 20px 0; border-bottom: 1px dashed #e2e8f0; margin-bottom: 20px; }
+
+.ap-comment-avatar { 
+    background-color: #dc2626; 
+    color: white; 
+    width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 700; flex-shrink: 0;
+}
+.ap-comment-body { min-width: 0; flex: 1; }
+.ap-comment-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 5px; }
+.ap-comment-author { font-weight: 700; color: #1a202c; }
+.ap-comment-date { font-size: 0.85em; color: #718096; }
+.ap-comment-text { font-size: 0.95em; color: #4a5568; margin: 5px 0 10px 0; overflow-wrap: break-word; }
+
+.ap-comment-reply-btn { 
+    background: #f7f7f7; 
+    color: #dc2626; 
+    border: 1px solid #dc2626; 
+    padding: 5px 15px; border-radius: 4px; cursor: pointer; font-weight: 600; 
+}
+
+.ap-reply-form h3 { font-size: 1.5em; margin-top: 30px; margin-bottom: 10px; }
+.ap-reply-form p { font-size: 0.9em; color: #718096; margin-bottom: 20px; }
+.ap-form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+.ap-reply-form input[type="text"], .ap-reply-form input[type="email"], .ap-reply-form textarea { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 1em; }
+.ap-form-row input { flex: 1; }
+.ap-post-comment-btn { 
+    background: #dc2626; 
+    color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 700; 
+}
+
+/* --- SIDEBAR WIDGETS --- */
+.ap-sidebar { padding: 30px 15px; min-width: 0; }
+.ap-widget { margin-bottom: 30px; padding: 0 15px; }
+.ap-widget-title { 
+    font-size: 1.2em; font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; 
+    border-bottom: 2px solid #dc2626; 
+    display: inline-block; 
+}
+.ap-recent-posts-list { list-style: none; padding: 0; }
+.ap-recent-post-item { margin-bottom: 15px; border-bottom: 1px dotted #e2e8f0; padding-bottom: 15px; }
+.ap-recent-post-link-wrapper { display: flex; text-decoration: none; align-items: flex-start; gap: 15px; }
+.ap-recent-post-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.ap-recent-post-details { display: flex; flex-direction: column; justify-content: center; flex-grow: 1; min-width: 0; }
+.ap-recent-post-title { font-size: 0.9em; line-height: 1.4; color: #1a202c; margin: 0; font-weight: 600; overflow-wrap: break-word; }
+.ap-recent-post-date { font-size: 0.75em; color: #718096; display: block; margin-top: 3px; }
+.ap-category-select { width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 1em; margin-top: 5px; }
+.ap-tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.ap-cloud-tag-item { 
+    text-decoration: none; background-color: #f7f7f7; color: #4a5568; 
+    padding: 6px 12px; border-radius: 4px; font-size: 0.9em; font-weight: 500; 
+    border: 1px solid #e2e8f0; transition: all 0.2s; 
+}
+.ap-cloud-tag-item:hover { 
+    background-color: #dc2626; 
+    color: white; 
+    border-color: #dc2626; 
+}
+.ap-ad-block { text-align: center; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; padding-bottom: 10px; }
+.ap-ad-block a { text-decoration: none; }
+.ap-ad-image { width: 100%; height: auto; display: block; margin-bottom: 10px; }
+.ap-ad-text { font-size: 0.95em; font-weight: 600; color: #1a202c; padding: 0 10px; margin: 0; }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .ap-main-layout {
+        grid-template-columns: 1fr;
+    }
+    .ap-main-content {
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    .ap-sidebar {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .ap-post-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ap-page-container {
+        padding: 20px 10px; /* Outer spacing reduced */
+    }
+    .ap-main-content {
+        padding: 15px; /* Inner content spacing reduced */
+    }
+    .ap-post-title {
+        font-size: 1.5rem; /* Better title size for phone */
+    }
+    .ap-form-row { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .ap-comment-item {
+        flex-direction: column; /* Stacks avatar on top of comment */
+        gap: 10px;
+    }
+    .ap-comment-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    .ap-meta-separator {
+        display: none; /* Hide bars to save space */
+    }
+}
+
+@media (max-width: 480px) {
+    .ap-thumbnail-item {
+        width: 160px; /* Smaller thumbnails for very small phones */
+    }
+    .ap-thumbnail-image, .ap-play-overlay {
+        height: 90px;
+    }
+    .ap-thumbnail-title {
+        font-size: 0.8em;
+    }
+}

@@ -1,0 +1,321 @@
+/* --- MAIN CONTAINER & GLOBAL STYLES --- */
+.explore-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+}
+
+.explore-header {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #000;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover h2, 
+.clickable:hover h3, 
+.clickable:hover h4 {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.article-summary {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.article-meta {
+    font-size: 0.7rem;
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- GRID SECTIONS --- */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1.2fr;
+    gap: 35px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.main-left-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    color: #000;
+}
+
+.main-right-section h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    color: #000;
+}
+
+.main-featured-image {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.main-featured-image:hover .featured-image {
+    transform: scale(1.03);
+}
+
+/* --- BOTTOM GRID --- */
+.bottom-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for better spacing */
+    gap: 25px;
+}
+
+.bottom-article-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-article-card .image-wrapper {
+    margin-bottom: 12px;
+    overflow: hidden;
+    height: 160px;
+    border-radius: 4px;
+}
+
+.bottom-article-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.bottom-article-card:hover img {
+    transform: scale(1.05);
+}
+
+.bottom-article-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 5px 0 8px 0;
+    line-height: 1.3;
+    color: #111;
+}
+
+/* --- MODAL STYLES (CLEAN & MINIMAL) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    width: 95%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #000;
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.modal-close-button:hover {
+    background: #ff0000;
+    transform: rotate(90deg);
+}
+
+.modal-media-wrapper {
+    margin-bottom: 25px;
+}
+
+.modal-media {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.modal-caption h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.modal-detailed-text {
+    color: #222;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .main-content-grid { grid-template-columns: 1fr 1fr; }
+    .main-right-section { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .bottom-articles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .main-content-grid { grid-template-columns: 1fr; }
+    .main-right-section { grid-template-columns: 1fr; }
+    .modal-caption h3 { font-size: 1.5rem; }
+}
+.main-featured-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.main-desc {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.featured-visual-mix {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.featured-hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero-meta-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+}
+
+.side-featured-box .side-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.mini-meta {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* --- NEW UPDATE: RIGHT SIDE STACK LOGIC --- */
+
+/* Ye container left aur right ko divide karta hai */
+.main-featured-layout {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr; /* Left bada aur Right thoda chhota */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Right side ke dono cards ko ek ke niche ek lane ke liye */
+.side-featured-stack {
+    display: flex;
+    flex-direction: column; 
+    gap: 25px; /* Dono cards ke beech ka gap */
+}
+
+/* Right side ke cards ki styling */
+.side-featured-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-featured-box .side-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.side-featured-box h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+/* Mobile responsive: Jab screen chhoti ho to sab ek line mein aa jaye */
+@media (max-width: 900px) {
+    .main-featured-layout {
+        grid-template-columns: 1fr;
+    }
+}

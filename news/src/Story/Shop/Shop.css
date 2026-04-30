@@ -1,0 +1,290 @@
+/* ===============================
+   SHOP SECTION BASE
+================================ */
+.ns-shop-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  /* Har phone me fit ke liye added: */
+  box-sizing: border-box;
+  width: 95%;
+}
+
+.ns-shop-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #dc2626;
+}
+
+/* ===============================
+   SLIDER FIXES (IMPORTANT)
+================================ */
+.ns-shop-slider-wrapper {
+  padding: 0 10px 40px;
+}
+
+.ns-shop-card-slide {
+  padding: 0 10px;
+  display: flex !important;
+  height: 100%;
+}
+
+.slick-slide>div {
+  height: 100%;
+}
+
+/* ===============================
+   CARD (SAME SIZE GUARANTEE)
+================================ */
+.ns-shop-card {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 560px; /* SAME HEIGHT for Desktop */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.ns-shop-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===============================
+   IMAGE (FIXED HEIGHT)
+================================ */
+.ns-shop-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ns-shop-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===============================
+   DETAILS SECTION
+================================ */
+.ns-shop-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ns-shop-item-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 8px;
+}
+
+/* Text overflow control */
+.ns-shop-item-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 15px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===============================
+   CTA
+================================ */
+.ns-shop-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px dashed #333;
+}
+
+.ns-shop-item-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #dc2626;
+}
+
+.ns-shop-buy-button {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ns-shop-buy-button:hover {
+  background: #b91c1c;
+}
+
+/* ===============================
+   EXTRA DETAILS (BOTTOM LOCK)
+================================ */
+.ns-shop-show-details {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #333;
+}
+
+.ns-shop-show-details h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.ns-shop-show-details p {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ===============================
+   VIEW ALL & SLICK DOTS (Unchanged)
+================================ */
+.ns-shop-view-all {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 600;
+  color: #dc2626;
+  text-decoration: none;
+}
+
+.ns-shop-view-all:hover {
+  color: #111;
+}
+
+.slick-dots {
+  bottom: 0 !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+  color: #aaa !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #dc2626 !important;
+}
+
+/* ===============================
+   RESPONSIVE IMPROVEMENTS (Har Phone Fit)
+================================ */
+
+/* Tablet (1024px) */
+@media (max-width: 1024px) {
+  .ns-shop-container {
+    padding: 15px;
+    width: 98%;
+  }
+
+  .ns-shop-card {
+    min-height: 540px;
+  }
+}
+
+/* Mobile (600px and below) */
+@media (max-width: 600px) {
+  .ns-shop-container {
+    margin: 20px auto;
+    padding: 10px;
+    width: 100%; /* Edge to edge for small screens */
+    border-radius: 0;
+  }
+
+  .ns-shop-main-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .ns-shop-card {
+    min-height: 420px; /* Adjusted for mobile view */
+  }
+
+  .ns-shop-image-wrapper {
+    height: 180px; /* Better ratio for mobile */
+  }
+
+  .ns-shop-details {
+    padding: 12px;
+  }
+
+  .ns-shop-item-title {
+    font-size: 1.1rem;
+  }
+
+  .ns-shop-item-description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2; /* 2 lines enough on mobile */
+  }
+
+  .ns-shop-cta {
+    flex-direction: row; /* Price and button in one line is better on mobile */
+    gap: 5px;
+    align-items: center;
+  }
+
+  .ns-shop-item-price {
+    font-size: 1.2rem;
+  }
+
+  .ns-shop-buy-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .ns-shop-container {
+    padding: 5px 0;
+  }
+
+  .ns-shop-slider-wrapper {
+    padding: 0 5px 30px;
+  }
+
+  .ns-shop-card-slide {
+    padding: 0 5px;
+  }
+
+  .ns-shop-card {
+    min-height: 400px;
+  }
+
+  /* Extra Details hide on very small phones to save space if needed, 
+     but keeping it as per your original code */
+  .ns-shop-show-details p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Landscape Mode Fix */
+@media (max-height: 500px) and (orientation: landscape) {
+  .ns-shop-card {
+    min-height: 350px;
+  }
+  .ns-shop-image-wrapper {
+    height: 120px;
+  }
+}

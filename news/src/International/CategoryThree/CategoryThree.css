@@ -1,0 +1,395 @@
+/* ================= GLOBAL CONTAINER ================= */
+.c3-container {
+    padding: 50px 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.c3-container a {
+    text-decoration: none;
+    transition: color 0.3s;
+    color: #000000;
+}
+
+.c3-container a:hover {
+    color: gray;
+}
+
+/* ================= HEADER ================= */
+.c3-main-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 20px;
+}
+
+.c3-main-header h1 {
+    font-size: clamp(2.2em, 8vw, 3.8em); 
+    font-weight: 800;
+    color: #000;
+    line-height: 1.1;
+}
+
+.c3-sub-heading {
+    font-size: clamp(0.9em, 4vw, 1.1em);
+    color: #444444;
+    margin-top: 10px;
+}
+
+/* ================= LAYOUT ================= */
+.c3-main-content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* ================= SECTION HEADINGS ================= */
+.c3-section-heading {
+    font-size: clamp(1.5em, 5vw, 2em);
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 5px solid #000;
+    color: #000000;
+}
+
+/* ================= MUSIC CARDS ================= */
+.music-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+.music-card:hover {
+    transform: translateY(-4px);
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+.feature-music-card .image-wrapper {
+    height: clamp(250px, 40vh, 420px);
+}
+
+.music-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* ================= TITLES ================= */
+.card-title-link h2 {
+    font-size: clamp(1.2em, 5vw, 1.6em);
+    margin: 10px 0;
+    color: #000000;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+    line-height: 1.3;
+}
+
+.card-title-link:hover h2 {
+    border-bottom: 2px solid gray; 
+}
+
+.feature-music-card .card-title-link h2 {
+    font-size: clamp(1.5em, 6vw, 2.1em);
+}
+
+.card-summary {
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+}
+
+/* ================= CATEGORY TAGS ================= */
+.news-category {
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    background: #000;
+}
+
+/* ================= META INFO ================= */
+.news-meta {
+    color: #7f8c8d;
+    margin-top: 10px;
+    font-size: 0.85em;
+    display: flex;
+    gap: 15px;
+}
+.news-meta .meta-item i {
+    color: gray;
+    margin-right: 5px;
+}
+
+/* ================= RELEASE GRID ================= */
+.c3-releases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* ================= SIDEBAR & POPULAR TRENDS (3 Column, 1 Row) ================= */
+.c3-sidebar-block {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.c3-hot-categories-vertical-stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+}
+
+.c3-sidebar-hot-category-item-v {
+    position: relative;
+    width: 100%;
+    height: 100px; 
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.c3-category-bg-image-v {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.c3-sidebar-hot-category-item-v:hover .c3-category-bg-image-v {
+    transform: scale(1.1);
+}
+
+.category-image-overlay-v {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.category-image-overlay-v::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.c3-category-info-v {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    z-index: 2;
+    color: white;
+}
+
+.c3-category-name-v {
+    display: block;
+    font-weight: bold;
+    font-size: 0.75rem; 
+    text-transform: uppercase;
+}
+
+.c3-category-count-v {
+    font-size: 0.6rem;
+    opacity: 0.9;
+}
+
+/* ================= RECENT POSTS ================= */
+.c3-sidebar-recent-post {
+    display: flex;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.recent-post-image {
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* ================= BUTTONS (MORE/LESS) ================= */
+.c3-btn-group, .c3-sidebar-btn-group, .see-more-less-btns, .sidebar-more-less {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.c3-load-more-btn, .back-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.c3-load-less-btn, .c3-sidebar-less-btn {
+    background: #666;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.c3-sidebar-more-btn {
+    width: 100%;
+    padding: 10px;
+    background: #eee;
+    border: 1px solid #ddd;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ================= SLIDER DOTS ================= */
+.slider-dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+.s-dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.s-dot.active {
+    background: #007bff;
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* ================= DETAIL VIEW ================= */
+.detail-view .full-news-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.detail-meta {
+    margin-bottom: 20px;
+    color: #888;
+    font-size: 0.9em;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+/* ================= SOCIAL MEDIA ================= */
+.c3-social-icons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.c3-social-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.c3-social-box i {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+}
+.facebook i { background: #3b5998; }
+.instagram i { background: #d6249f; }
+.youtube i { background: #c4302b; }
+
+/* ================= MOBILE-READY RESPONSIVE DESIGN ================= */
+
+@media (max-width: 992px) {
+    .c3-main-content-layout {
+        grid-template-columns: 1fr; /* Sidebar comes below main content */
+    }
+    .c3-releases-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .c3-right-sidebar-music {
+        order: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .c3-container {
+        padding: 20px 15px;
+    }
+    .c3-releases-grid {
+        grid-template-columns: 1fr; /* Latest News: 1 Column on Phone */
+    }
+    .feature-music-card .image-wrapper {
+        height: 220px;
+    }
+
+    /* Popular Trends: Ek ke niche ek (Vertical Stack) for Phone */
+    .c3-hot-categories-vertical-stack {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+    .c3-sidebar-hot-category-item-v {
+        height: 140px; /* Badi height mobile par taaki clear dikhe */
+    }
+    .c3-category-name-v {
+        font-size: 1.1rem;
+    }
+    .c3-category-count-v {
+        font-size: 0.8rem;
+    }
+
+    /* Button and Meta adjustments */
+    .detail-meta {
+        gap: 10px;
+    }
+    .c3-load-more-btn, .c3-load-less-btn {
+        width: 100%;
+    }
+    .c3-sidebar-recent-post {
+        align-items: center;
+    }
+}

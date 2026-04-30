@@ -1,0 +1,442 @@
+/* -------------------------------------------------------------------
+|  MARKETING SECTION STYLES (MarketingSection.css)
+|  Theme: Black, Gray, White only, EXCEPT for Social Media Icons
+------------------------------------------------------------------- */
+
+.mk-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background */
+}
+
+/* --- Header & Breadcrumb --- */
+.mk-main-header {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.mk-category-tag {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000; /* Black for emphasis */
+    background-color: #f7f7f7; /* Very light gray */
+    padding: 5px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+/* --- Main Layout --- */
+.mk-main-content-layout {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; /* Main Content (2.5) | Sidebar (1) */
+    gap: 30px;
+}
+
+/* --- NEW: Full Width Detail Layout --- */
+.mk-full-width-layout {
+    display: block;
+    width: 100%;
+    animation: mkFadeIn 0.4s ease-in;
+}
+
+/* --- Feature Post Section --- */
+.mk-feature-card {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.mk-feature-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.mk-card-content {
+    padding: 15px 20px;
+}
+
+.mk-feature-meta-top {
+    font-size: 0.85rem;
+    color: #777777; /* Medium gray */
+    margin-bottom: 10px;
+}
+
+.mk-card-title-link {
+    text-decoration: none;
+}
+
+.mk-card-title-link h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+    color: #000000;
+    transition: color 0.3s;
+}
+
+.mk-card-title-link:hover h3 {
+    color: #444444; /* Darker gray for hover effect */
+}
+
+.mk-card-summary {
+    color: #555555;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* --- Grid Posts Section --- */
+.mk-section-heading {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-left: 5px solid #333333; /* Dark gray highlight color */
+    padding-left: 10px;
+}
+
+.mk-releases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mk-grid-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.mk-grid-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mk-grid-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.mk-grid-meta-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.mk-grid-category {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.mk-grid-time {
+    color: #777777;
+}
+
+/* --- UPDATED: Modern Pagination (Next/Prev) --- */
+.mk-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.mk-pagination-link,
+.mk-page-number {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    border: 2px solid #000000; /* Sharp Black Border */
+    border-radius: 0; /* Square/Professional look */
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.mk-pagination-link:hover:not(:disabled),
+.mk-page-number:hover {
+    background-color: #000000; /* Dark gray on hover */
+    color: #ffffff;
+}
+
+.mk-pagination-link:disabled {
+    cursor: not-allowed;
+    border-color: #e0e0e0;
+    color: #cccccc;
+    background-color: #f9f9f9;
+}
+
+.mk-active-page {
+    background-color: #000000; /* Black for active page */
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* --- Sidebar Styles --- */
+.mk-sidebar-block {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+}
+
+.mk-sidebar-heading {
+    font-size: 1.3rem;
+    border-bottom: 2px solid #333333; /* Dark gray highlight */
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Recent Posts */
+.mk-recent-post-item {
+    display: flex;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #333333;
+}
+
+.mk-recent-post-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.mk-post-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mk-post-category {
+    font-size: 0.75rem;
+    color: #555555; /* Medium gray for category text */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mk-post-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Hot Categories */
+.mk-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mk-category-item {
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.mk-category-item a {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #444444;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.mk-category-item a:hover {
+    color: #000000; /* Black on hover */
+}
+
+.mk-category-count {
+    color: #777777;
+    font-weight: bold;
+}
+
+/* Social Media Icons */
+.mk-social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mk-social-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    color: #ffffff; 
+    text-decoration: none;
+    transition: opacity 0.2s;
+    background-color: #555555; 
+}
+
+.mk-social-item:hover {
+    opacity: 0.85;
+}
+
+.mk-social-item i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.mk-social-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.mk-social-count {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.mk-social-name {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+/* Subscribe Box */
+.mk-subscribe-box {
+    padding: 15px;
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+
+.mk-subscribe-box i {
+    font-size: 2rem;
+    color: #333333; /* Icon color dark gray */
+    margin-bottom: 10px;
+}
+
+.mk-subscribe-box p {
+    font-size: 0.9rem;
+    margin: 0 0 10px 0;
+    color: #333333;
+}
+
+.mk-subscribe-input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.mk-subscribe-btn {
+    width: 90%;
+    padding: 10px;
+    background-color: #000000; /* Black button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.mk-subscribe-btn:hover {
+    background-color: #555555; /* Dark gray on hover */
+}
+
+/* --- NEW: NEWS DETAIL VIEW STYLES --- */
+.mk-news-detail-view {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mk-back-btn-wrapper {
+    margin-bottom: 20px;
+}
+
+.mk-back-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.mk-back-btn:hover {
+    background-color: #333333;
+}
+
+.mk-detail-hero-img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.mk-detail-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.mk-detail-meta {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.mk-detail-content {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #222;
+}
+
+@keyframes mkFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+    .mk-main-content-layout {
+        grid-template-columns: 1fr; /* Stack content and sidebar */
+    }
+}
+
+@media (max-width: 768px) {
+    .mk-releases-grid {
+        grid-template-columns: 1fr; /* Single column for grid posts */
+    }
+
+    .mk-feature-image {
+        height: 250px;
+    }
+
+    .mk-detail-title {
+        font-size: 1.8rem;
+    }
+}

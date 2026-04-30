@@ -1,0 +1,202 @@
+:root {
+  --cs-dark-bg: #1f1f1f;
+  --cs-white-bg: #ffffff;
+  --cs-dark-text: #000000;
+  --cs-light-text: #ffffff;
+  --cs-border-color: #e0e0e0;
+  --cs-accent-color: #3a68f0;
+  --cs-light-gray: #f5f5f5;
+  --cs-medium-gray: #666;
+}
+
+.cs-main-container {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* --- Dark Header --- */
+.cs-dark-header {
+  background-color: var(--cs-dark-bg);
+  padding: 60px 20px 80px;
+  color: var(--cs-light-text);
+  text-align: center;
+}
+
+.cs-main-heading {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cs-breadcrumb {
+  font-size: 1em;
+  color: #888;
+}
+
+/* --- White Section --- */
+.cs-contact-section-white {
+  background-color: var(--cs-white-bg);
+  padding: 40px 20px 80px;
+  max-width: 1200px;
+  margin: -40px auto 0;
+  border-radius: 5px 5px 0 0;
+}
+
+.cs-section-subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--cs-medium-gray);
+  margin-bottom: 50px;
+}
+
+.cs-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+/* --- Form Styles --- */
+.cs-form-heading {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: var(--cs-dark-text);
+}
+
+.cs-contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-form-group {
+  margin-bottom: 20px;
+}
+
+.cs-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--cs-dark-text);
+  font-size: 0.95em;
+}
+
+.cs-form-group input,
+.cs-form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cs-border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: var(--cs-light-gray);
+  color: var(--cs-dark-text);
+  transition: border-color 0.3s;
+}
+
+.cs-form-group input:focus,
+.cs-form-group textarea:focus {
+  border-color: var(--cs-accent-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(58, 104, 240, 0.5);
+}
+
+.cs-submit-button {
+  background-color: var(--cs-accent-color);
+  color: var(--cs-light-text);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  width: auto;
+  align-self: flex-start;
+}
+
+.cs-submit-button:hover {
+  background-color: #2b56e6;
+}
+
+.cs-submit-button:active {
+  transform: scale(0.99);
+}
+
+/* --- Info Styles --- */
+.cs-info-heading {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: var(--cs-dark-text);
+}
+
+.cs-detail-box {
+  background-color: var(--cs-light-gray);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border-left: 5px solid var(--cs-accent-color);
+}
+
+.cs-detail-box .cs-icon {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.cs-detail-box h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.cs-detail-box p {
+  font-size: 0.95em;
+  margin: 0;
+  color: var(--cs-medium-gray);
+}
+
+/* --- Social Icons --- */
+.cs-social-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cs-social-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--cs-accent-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: transform 0.3s;
+}
+
+.cs-social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .cs-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cs-form-wrapper {
+    order: 2;
+  }
+  .cs-info-wrapper {
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .cs-dark-header { padding: 40px 15px 60px; }
+  .cs-main-heading { font-size: 2.5em; }
+  .cs-contact-section-white { padding: 30px 15px 60px; }
+  .cs-submit-button { width: 100%; }
+}

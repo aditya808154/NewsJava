@@ -1,0 +1,465 @@
+/* BusinessSection.css - White, Black, Gray Theme (Updated without cutting) */
+
+/* GLOBAL CONTAINER & LIGHT THEME */
+.bs-container {
+    padding: 50px 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif; 
+    background-color: #ffffff; /* White Background */
+    color: #000000; /* Black Text */
+}
+
+#bs{
+    background-color: #fff;
+}
+.bs-container a {
+    text-decoration: none; /* Default: No underline */
+    transition: color 0.3s;
+    color: #333333; /* Dark Gray Link Color */
+}
+
+/* ⭐ GLOBAL LINK HOVER: Gray Hover Color */
+.bs-container a:hover {
+    color: #555555; /* Medium Gray Hover */
+    text-decoration: underline; 
+}
+
+/* HEADER */
+.bs-main-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0; /* Light Gray Separator */
+}
+.bs-category-tag {
+    font-size: 3.5em;
+    font-weight: 900;
+    color: #000000; 
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+.bs-breadcrumb {
+    font-size: 0.9em;
+    color: #757575; /* Gray Breadcrumb */
+}
+
+/* LAYOUT: 2-Column Grid (Main Content + Sidebar) */
+.bs-main-content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.bs-section-heading {
+    font-size: 1.8em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid; 
+    color: #000000;
+}
+/* ⭐ HEADING UNDERLINE COLOR: Changed from Blue to Dark Gray */
+.bs-business-heading { border-bottom-color: #333333; } 
+
+/* NEWS CARDS - General Styles */
+.bs-news-card {
+    background: #f5f5f5; /* Very Light Gray Card Background */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0; 
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+.bs-news-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bs-card-image {
+    width: 100%;
+    height: 100%; /* Added to ensure proper fill */
+    object-fit: cover; /* ⭐ Fixes Image Stretching */
+}
+
+/* 1. FEATURED POST STYLING */
+.bs-feature-post-layout {
+    background: #f5f5f5;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+}
+
+.bs-feature-post-layout .bs-card-image {
+    height: 500px; /* Fixed height for feature image */
+    display: block;
+    object-fit: cover; /* ⭐ Ensures feature image doesn't stretch */
+}
+
+.bs-feature-post-layout .bs-card-content {
+    padding: 30px 40px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bs-feature-meta-top {
+    color: #757575;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+/* ⭐ FEATURE ICON COLOR: Changed from Blue to Gray */
+.bs-feature-meta-top .bs-meta-item i {
+    color: #757575; 
+    margin-right: 5px;
+}
+
+.bs-feature-post-layout .bs-card-title-link h3 {
+    font-size: 2.5em; 
+    font-weight: 700;
+    color: #000000; 
+    line-height: 1.3;
+    margin: 0 0 20px 0;
+}
+
+/* ⭐ FEATURED TITLE HOVER EFFECT: Gray Hover Color */
+.bs-feature-post-layout .bs-card-title-link:hover {
+    text-decoration: none; 
+}
+.bs-feature-post-layout .bs-card-title-link:hover h3 {
+    text-decoration: underline; 
+    color: #555555; /* Medium Gray Hover */
+}
+
+.bs-card-summary {
+    font-size: 1.1em;
+    color: #333333;
+    line-height: 1.6;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+/* 2. GRID POST STYLING */
+.bs-releases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.bs-grid-card {
+    position: relative;
+    border-radius: 8px;
+}
+
+.bs-grid-card .bs-card-image {
+    height: 200px; /* ⭐ Fixed height for Grid images */
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+.bs-grid-card .bs-card-content {
+    padding: 15px;
+}
+
+.bs-grid-card .bs-card-title-link h3 {
+    font-size: 1em; 
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+/* ⭐ GRID TITLE HOVER EFFECT: Gray Hover Color */
+.bs-grid-card .bs-card-title-link:hover {
+    text-decoration: none; 
+}
+.bs-grid-card .bs-card-title-link:hover h3 {
+    text-decoration: underline; 
+    color: #555555; /* Medium Gray Hover */
+}
+
+/* Overlay for Category and Time on Grid Image */
+.bs-grid-meta-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+.bs-grid-category {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+.bs-grid-time {
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+
+/* PAGINATION STYLING */
+.bs-pagination {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px 0;
+}
+
+.bs-page-number, .bs-pagination-link {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    background: #f0f0f0; 
+    border: 1px solid #cccccc;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.bs-page-number.bs-active-page {
+    background: #000000; 
+    border-color: #000000;
+    color: white;
+    cursor: default;
+}
+
+.bs-pagination-link {
+    background: transparent;
+    border-color: #333333;
+    color: #333333;
+    padding: 8px 18px; 
+}
+
+.bs-pagination-link:hover:not(:disabled) { 
+    background: #333333;
+    color: white;
+    text-decoration: none; 
+}
+
+.bs-pagination-link:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f0f0f0 !important;
+    border-color: #cccccc !important;
+    color: #757575 !important;
+    text-decoration: none;
+}
+
+
+/* RIGHT SIDEBAR STYLING */
+.bs-right-sidebar-news {
+    padding-top: 20px;
+}
+
+.bs-sidebar-block {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f5f5f5; 
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.bs-sidebar-heading {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333333;
+}
+
+/* Recent Posts */
+.bs-recent-post-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #cccccc;
+    text-decoration: none !important;
+}
+.bs-recent-post-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.bs-recent-post-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover; /* ⭐ Fixes sidebar images */
+    border-radius: 4px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.bs-post-title {
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0;
+    color: #333;
+}
+.bs-post-category {
+    display: block;
+    font-size: 0.75em;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+/* Hot Categories */
+.bs-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.bs-category-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.bs-category-item a {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #333;
+}
+.bs-category-item a:hover {
+    color: #333333;
+}
+.bs-category-count {
+    font-weight: 700;
+    color: #757575;
+}
+
+/* Social Media Icons */
+.bs-social-media {
+    padding: 0;
+    background: none;
+    border: none;
+}
+.bs-social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+#bus{
+    background-color: #fff;
+}
+.bs-social-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-decoration: none !important;
+}
+.bs-social-item:hover {
+    transform: translateY(-3px);
+}
+.bs-social-item i {
+    font-size: 1.8em;
+    margin-right: 15px;
+}
+.bs-social-details {
+    display: flex;
+    flex-direction: column;
+}
+.bs-social-count {
+    font-size: 1.1em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.bs-social-name {
+    font-size: 0.75em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* ADDED: DETAIL VIEW STYLES (To support single page view) */
+.bs-detail-content-area {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+.bs-back-button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.bs-detail-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.bs-detail-title {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.bs-detail-text {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ⭐ NEW UPDATE: FULL PAGE DISPLAY FIX ⭐ */
+
+/* Detail view khulne par grid system ko disable karke full width karna */
+.bs-main-content-layout.full-width {
+    display: block; 
+    max-width: 1100px; /* Reading ke liye comfortable width */
+    margin: 0 auto;
+}
+
+/* Detail view ka main container poora area le */
+.bs-detail-view-full {
+    width: 100%;
+}
+
+/* Responsive updates for detail view */
+@media (max-width: 992px) {
+    .bs-main-content-layout {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .bs-container {
+        padding: 20px 15px;
+    }
+    .bs-releases-grid {
+        grid-template-columns: 1fr; 
+    }
+    .bs-feature-post-layout .bs-card-image {
+        height: 250px;
+    }
+    .bs-detail-title {
+        font-size: 1.8em;
+    }
+}

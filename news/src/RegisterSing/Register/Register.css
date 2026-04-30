@@ -1,0 +1,152 @@
+/* Container Background - Dark Gray */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 20px;
+}
+
+/* Main Card */
+.register-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section - Red Gradient */
+.register-left {
+  flex: 1;
+  background: linear-gradient(135deg, #e63946 0%, #b91d1d 100%);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.register-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.register-left p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.red-line {
+  width: 50px;
+  height: 4px;
+  background: #fff;
+  margin-top: 20px;
+}
+
+/* Right Section - Form */
+.register-right {
+  flex: 1.2;
+  padding: 50px 40px;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Input Fields */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+  background: #fafafa;
+}
+
+.input-group input:focus {
+  border-color: #e63946;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.2);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+/* Button */
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.register-btn:hover {
+  background-color: #c1121f;
+  transform: translateY(-2px);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.red-text {
+  color: #e63946;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register-card {
+    flex-direction: column;
+  }
+  .register-left {
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+  }
+  .register-right {
+    padding: 30px 20px;
+  }
+}

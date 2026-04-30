@@ -1,0 +1,329 @@
+/* SingleShopItem.css */
+
+.ns-single-product-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; 
+    /* Mobile compatibility */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Breadcrumb */
+.ns-breadcrumb {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+.ns-breadcrumb a {
+    color: #dc2626;
+    text-decoration: none;
+}
+
+/* Main Layout (Image and Details side-by-side) */
+.ns-product-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+/* 1. Image Section */
+.ns-product-image-section {
+    flex: 1;
+    max-width: 500px;
+    position: sticky; 
+    top: 20px;
+}
+
+.ns-product-main-image {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block;
+}
+
+.ns-product-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    overflow-x: auto; /* Mobile pe thumbnails swipe ho sakenge */
+    padding-bottom: 5px;
+}
+
+.ns-thumbnail-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border 0.2s;
+    flex-shrink: 0; /* Pinching se rokne ke liye */
+}
+
+.ns-thumbnail-image:hover {
+    border-color: #dc2626; /* Red border on hover */
+}
+
+/* 2. Details Section */
+.ns-product-details-section {
+    flex: 1.5;
+    min-width: 0; /* Text overflow handling */
+}
+
+.ns-product-title {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.ns-product-tagline {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- Review Summary (Near Product Title) --- */
+.ns-review-summary {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Stars aur count mobile pe line tod sakein */
+}
+
+.ns-average-rating {
+    font-weight: bold;
+    color: #dc2626; /* Red rating number */
+    font-size: 1.2em;
+}
+
+.ns-review-stars {
+    color: #dc2626; /* Red stars */
+    font-size: 1.5em;
+    letter-spacing: 2px; /* Spacing between stars */
+}
+
+.ns-review-count {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Price and Stock */
+.ns-product-price-box {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-left: 5px solid #dc2626;
+    border-radius: 4px;
+}
+.ns-product-price {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #dc2626;
+    display: block;
+}
+.ns-product-stock {
+    font-size: 0.9em;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.ns-details-heading {
+    font-size: 1.3em;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.ns-product-description-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Features List */
+.ns-product-features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.ns-product-features-list li {
+    padding: 5px 0 5px 25px;
+    position: relative;
+    color: #1a1a1a;
+}
+.ns-product-features-list li::before {
+    content: '★'; /* Custom bullet point */
+    color: #dc2626;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Action Buttons */
+.ns-product-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.ns-quantity-input {
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.ns-add-to-cart-button {
+    flex-grow: 1;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ns-add-to-cart-button:hover {
+    background-color: #b91c1c;
+}
+
+/* --- Reviews Section Styles --- */
+
+.ns-product-reviews {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid #ddd; 
+}
+
+.ns-review-item {
+    border-bottom: 1px dashed #ccc; 
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.ns-review-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.ns-review-author {
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.ns-review-date {
+    color: #999;
+}
+
+.ns-review-rating {
+    margin-bottom: 10px;
+}
+.ns-review-rating .ns-review-stars {
+    font-size: 1.2em;
+}
+
+.ns-review-comment {
+    font-style: italic;
+    color: #444;
+    word-break: break-word;
+}
+
+.ns-load-more-reviews-button {
+    background-color: transparent;
+    color: #dc2626;
+    border: 1px solid #dc2626;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.ns-load-more-reviews-button:hover {
+    background-color: #dc2626;
+    color: white;
+}
+
+/* --- RESPONSIVE DESIGN (Har Phone Ke Liye) --- */
+@media (max-width: 900px) {
+    .ns-single-product-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    .ns-product-wrapper {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    .ns-product-image-section {
+        max-width: 100%;
+        position: static; 
+    }
+    .ns-product-title {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .ns-product-title {
+        font-size: 1.8em; /* Mobile title size adjustment */
+    }
+    .ns-product-price {
+        font-size: 2.1em;
+    }
+    .ns-product-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .ns-quantity-input {
+        width: 100%; /* Mobile pe full width quantity */
+        box-sizing: border-box;
+    }
+    .ns-add-to-cart-button {
+        width: 100%;
+        padding: 15px; /* Thoda bada tap area */
+    }
+    .ns-thumbnail-image {
+        width: 65px;
+        height: 65px;
+    }
+    .ns-product-price-box {
+        padding: 10px;
+    }
+}
+
+/* Ultra Small Phones (iPhone SE etc.) */
+@media (max-width: 380px) {
+    .ns-product-title {
+        font-size: 1.5em;
+    }
+    .ns-product-price {
+        font-size: 1.8em;
+    }
+    .ns-review-summary {
+        font-size: 0.8em;
+    }
+    .ns-average-rating {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,210 @@
+/* RightSidebarLayout.css - Complete Responsive Styling */
+
+/* --- Base Layout & Structure --- */
+.spd-page-container {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #1a202c;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Screen se bahar jane se rokne ke liye */
+}
+
+.spd-main-layout {
+    display: grid;
+    /* Sidebar (left) 1fr, Main Content (right) 2fr */
+    grid-template-columns: 1fr 2fr; 
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- LEFT COLUMN (SIDEBAR) --- */
+.spd-sidebar {
+    padding: 30px 15px;
+    position: sticky;
+    top: 20px; 
+    height: fit-content; 
+    align-self: start; 
+    min-width: 0; /* Overflow fix */
+}
+
+.spd-widget {
+    margin-bottom: 30px;
+    padding: 0 5px; 
+}
+
+.spd-widget-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dc2626; /* Red Theme maintained */
+    display: inline-block;
+}
+
+/* Recent Posts Widget */
+.spd-recent-posts-list { list-style: none; padding: 0; }
+.spd-recent-post-item { margin-bottom: 15px; border-bottom: 1px dotted #e2e8f0; padding-bottom: 15px; }
+.spd-recent-post-link-wrapper { display: flex; text-decoration: none; align-items: flex-start; gap: 15px; }
+.spd-recent-post-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.spd-recent-post-details { display: flex; flex-direction: column; justify-content: center; flex-grow: 1; min-width: 0; }
+.spd-recent-post-title { font-size: 0.9em; line-height: 1.4; color: #1a202c; margin: 0; font-weight: 600; overflow-wrap: break-word; }
+.spd-recent-post-link-wrapper:hover .spd-recent-post-title { color: #dc2626; }
+.spd-recent-post-date { font-size: 0.75em; color: #718096; display: block; margin-top: 3px; }
+
+/* Categories Dropdown */
+.spd-category-select {
+    width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 1em; margin-top: 5px;
+}
+
+/* Tags Cloud Widget */
+.spd-tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.spd-cloud-tag-item {
+    text-decoration: none; background-color: #f7f7f7; color: #4a5568; 
+    padding: 6px 12px; border-radius: 4px; font-size: 0.9em; font-weight: 500; 
+    border: 1px solid #e2e8f0; transition: all 0.2s;
+}
+.spd-cloud-tag-item:hover { background-color: #dc2626; color: white; border-color: #dc2626; }
+
+/* Promotion/Ad Block Widget */
+.spd-ad-block { text-align: center; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; padding-bottom: 10px; }
+.spd-ad-block a { text-decoration: none; }
+.spd-ad-image { width: 100%; height: auto; display: block; margin-bottom: 10px; }
+.spd-ad-text { font-size: 0.95em; font-weight: 600; color: #1a202c; padding: 0 10px; margin: 0; }
+
+/* --- RIGHT COLUMN (MAIN CONTENT) --- */
+.spd-main-content {
+    padding: 30px;
+    min-width: 0; /* Phone par content squeeze hone se rokta hai */
+}
+
+.spd-post-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    overflow-wrap: break-word; /* Long titles fix */
+}
+
+/* Post Meta Styling */
+.spd-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0; 
+    font-size: 0.9em;
+    color: #718096;
+    flex-wrap: wrap; /* Phone par line break ke liye */
+}
+
+.spd-meta-item i {
+    color: #dc2626; 
+}
+
+/* Featured Image Styling */
+.spd-featured-image-wrapper {
+    margin-bottom: 30px; 
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spd-featured-image {
+    width: 100%;
+    height: auto; /* Fixed height hata di taaki stretch na ho */
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content, Footer & Tags */
+.spd-post-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 30px;
+    overflow-wrap: break-word; /* Content cutting fix */
+}
+
+/* Important: Content ke andar ki images ko fix karna */
+.spd-post-text img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 6px;
+}
+
+.spd-post-text h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid #dc2626;
+    padding-left: 10px;
+    word-wrap: break-word;
+}
+
+.spd-post-text blockquote {
+    border-left: 5px solid #ffaa00;
+    padding: 15px 20px;
+    margin: 20px 0;
+    background-color: #fffaf0;
+    font-style: italic;
+    color: #4a5568;
+}
+
+.spd-post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.spd-social-share { display: flex; gap: 15px; }
+.spd-social-icon { font-size: 1.2em; color: #718096; cursor: pointer; transition: color 0.2s; }
+.spd-social-icon:hover { color: #dc2626; }
+
+.spd-tags-list { display: flex; align-items: center; gap: 8px; font-size: 0.9em; flex-wrap: wrap; }
+.spd-tag-label { font-weight: 700; color: #1a202c; }
+.spd-tag-item {
+    text-decoration: none; color: #dc2626; padding: 2px 8px; border: 1px solid #dc2626; 
+    border-radius: 15px; transition: background-color 0.2s;
+}
+.spd-tag-item:hover { background-color: #fef2f2; }
+
+/* --- Responsive Adjustments (The Fix) --- */
+@media (max-width: 1024px) {
+    .spd-main-layout {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse; /* Sidebar niche jayega phone par */
+    }
+    .spd-main-content {
+        padding: 20px;
+    }
+    .spd-sidebar {
+        position: static; 
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spd-page-container {
+        padding: 15px 10px;
+    }
+    .spd-post-title {
+        font-size: 1.6em;
+    }
+    .spd-meta-separator {
+        display: none; /* Mobile par separator hataye space ke liye */
+    }
+}

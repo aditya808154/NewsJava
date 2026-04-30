@@ -1,0 +1,286 @@
+/* MyAccount.css */
+
+.ns-myaccount-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Har phone ke liye: */
+    box-sizing: border-box;
+    width: 95%;
+}
+
+.ns-myaccount-main-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #1a1a1a; 
+    padding-bottom: 10px;
+    border-bottom: 4px solid #dc2626; 
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Main Layout: Sidebar + Content --- */
+.ns-account-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+/* 1. Sidebar Navigation */
+.ns-sidebar-nav {
+    flex-basis: 250px; /* Fixed width for sidebar */
+    background-color: #1a1a1a; /* Black background */
+    border-radius: 8px;
+    padding: 10px 0;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.ns-nav-item {
+    padding: 15px 20px;
+    color: #ffffff; /* White text */
+    font-weight: 500;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    transition: background-color 0.2s, border-left 0.2s;
+}
+
+.ns-nav-item:hover {
+    background-color: #333333;
+}
+
+.ns-nav-item.active {
+    background-color: #222222;
+    color: #dc2626; /* Red active text */
+    border-left: 5px solid #dc2626; /* Red border */
+    font-weight: 700;
+}
+
+.ns-nav-item.logout {
+    margin-top: 20px;
+    color: #ff8a80; /* Light red for logout */
+}
+.ns-nav-item.logout:hover {
+    background-color: #333333;
+    color: #dc2626;
+}
+
+/* 2. Main Content Area */
+.ns-content-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-width: 0; /* Text wrap hone ke liye */
+    box-sizing: border-box;
+}
+
+.ns-content-area h3 {
+    font-size: 1.8em;
+    color: #1a1a1a;
+    border-bottom: 2px solid #dc2626;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Profile Details --- */
+.ns-profile-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.ns-profile-card p {
+    margin-bottom: 8px;
+    color: #444;
+    word-wrap: break-word; /* Lambi email phone se bahar na jaye */
+}
+
+/* --- Order History --- */
+.ns-order-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+}
+
+.ns-order-header, .ns-order-body {
+    flex: 1;
+}
+
+.ns-order-id {
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+}
+
+.ns-order-total {
+    font-size: 1.2em;
+    color: #dc2626;
+    font-weight: 800;
+}
+
+.ns-order-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Status Colors */
+.ns-status-delivered .ns-order-status { background-color: #d4edda; color: #155724; }
+.ns-status-shipped .ns-order-status { background-color: #fff3cd; color: #856404; }
+.ns-status-cancelled .ns-order-status { background-color: #f8d7da; color: #721c24; }
+
+/* Buttons */
+.ns-edit-button, .ns-view-details-button, .ns-add-address-button {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.ns-edit-button:hover, .ns-view-details-button:hover, .ns-add-address-button:hover {
+    background-color: #b91c1c;
+}
+
+/* --- Address Book --- */
+.ns-add-address-button {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.ns-addresses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.ns-address-card {
+    border: 2px solid #1a1a1a; /* Black border */
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.ns-address-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #dc2626;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0 8px 0 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.ns-address-actions {
+    margin-top: 10px;
+}
+.ns-link-button {
+    background: none;
+    border: none;
+    color: #dc2626;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0 5px;
+}
+.ns-link-button.delete {
+    color: #721c24;
+}
+
+/* --- Responsive Design (Har Phone Fit) --- */
+@media (max-width: 900px) {
+    .ns-account-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .ns-sidebar-nav {
+        flex-basis: auto;
+        padding: 0;
+        margin-bottom: 10px;
+        display: flex;
+        overflow-x: auto; /* Swipeable menu */
+        white-space: nowrap;
+        scrollbar-width: none; /* Hide scrollbar for clean look */
+        -ms-overflow-style: none;
+        border-radius: 0;
+        width: 100vw;
+        margin-left: -20px; /* Container padding offset */
+    }
+
+    .ns-sidebar-nav::-webkit-scrollbar {
+        display: none; /* Chrome/Safari scrollbar hide */
+    }
+
+    .ns-nav-item {
+        flex-shrink: 0;
+        border-left: none;
+        border-bottom: 4px solid transparent;
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .ns-nav-item.active {
+        border-left: none;
+        border-bottom: 4px solid #dc2626;
+    }
+
+    .ns-nav-item.logout {
+        margin-top: 0;
+        border-bottom: 4px solid transparent;
+    }
+
+    .ns-content-area {
+        padding: 20px 15px;
+        box-shadow: none;
+        border: 1px solid #eee;
+    }
+}
+
+@media (max-width: 600px) {
+    .ns-myaccount-main-title {
+        font-size: 1.6em;
+    }
+    .ns-order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .ns-order-body {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ns-view-details-button {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+    .ns-addresses-grid {
+        grid-template-columns: 1fr; /* Single column for addresses */
+    }
+}
+
+/* Bahut chote phones ke liye */
+@media (max-width: 380px) {
+    .ns-content-area h3 {
+        font-size: 1.4em;
+    }
+    .ns-order-total {
+        font-size: 1.1em;
+    }
+}

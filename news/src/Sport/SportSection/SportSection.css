@@ -1,0 +1,542 @@
+/* SportSection.css - Unique Modern Sports Style */
+
+.sp-container {
+    padding: 30px 15px;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a202c;
+}
+
+/* Base Link Style */
+.sp-container a {
+    text-decoration: none;
+    transition: color 0.3s;
+    color: inherit;
+}
+
+/* === 1. ALL LINKS HOVER EFFECT (BLUE TO GRAY CHANGE) === */
+.sp-container a:hover {
+    color: #a0aec0;
+    /* Changed from blue to Grey Hover */
+}
+
+/* --- HEADER --- */
+.sp-main-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sp-category-title {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+.sp-tagline {
+    font-size: 0.9em;
+    color: #6b7280;
+}
+
+/* --- MAIN LAYOUT --- */
+.sp-main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.sp-focus-wrapper {
+    grid-column: 1 / -1;
+    margin-bottom: 30px;
+}
+
+/* --- HEADING STYLES --- */
+.sp-section-heading {
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    color: #000;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.sp-highlight-heading {
+    color: #dc2626;
+    border-bottom: 2px solid #dc2626;
+}
+
+/* --- 2. STORY TITLES HOVER EFFECT (UNDERLINE) --- */
+
+/* Main Grid & Video Gallery Titles (sp-title-link) पर हॉवर इफ़ेक्ट */
+.sp-title-link:hover {
+    text-decoration: underline;
+}
+
+/* === 3. FOCUS STORY TITLE HOVER EFFECT === */
+.sp-focus-link:hover .sp-focus-title {
+    text-decoration: underline;
+}
+
+/* --- 1. FOCUS STORY CARD --- */
+.sp-focus-card {
+    position: relative;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.sp-focus-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    color: white;
+}
+
+.sp-category-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: white !important;
+}
+
+.sp-focus-title {
+    font-size: 1.8em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+    color: white;
+    transition: text-decoration 0.3s;
+}
+
+.sp-focus-summary {
+    font-size: 0.9em;
+    color: #cbd5e0;
+    margin-bottom: 10px;
+}
+
+.sp-focus-time {
+    font-size: 0.75em;
+    color: #a0aec0;
+}
+
+/* --- 2. MAIN GRID SECTION (2x2) --- */
+.sp-major-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.sp-major-grid-card {
+    background: #fdfdff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sp-grid-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.sp-grid-content {
+    padding: 10px 15px;
+}
+
+.sp-grid-category-tag {
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sp-grid-content h4 {
+    font-size: 1em;
+    font-weight: 600;
+    color: #1a202c;
+    line-height: 1.3;
+    min-height: 40px;
+    margin: 0 0 5px 0;
+}
+
+.sp-time {
+    font-size: 0.75em;
+    color: #718096;
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- 3. VIDEO GALLERY SIDEBAR --- */
+
+/* === NEW VIDEO TAG STYLING (For Thumbnail) === */
+.sp-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* थंबनेल एरिया को पूरी तरह से कवर करता है */
+    display: block;
+}
+
+/* लोकल वीडियो आइटम के लिए विशेष स्टाइलिंग */
+.sp-local-video .sp-video-thumb {
+    background-image: none !important;
+    overflow: hidden;
+}
+
+/* लोकल वीडियो पर आइकन को वीडियो के ऊपर रखने के लिए */
+.sp-local-video .sp-video-icon {
+    z-index: 10;
+    pointer-events: none;
+    /* आइकन को क्लिक करने से रोकता है, ताकि क्लिक वीडियो टैग पर जाए */
+}
+
+/* ============================================= */
+
+
+.sp-video-list {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.sp-video-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 15px;
+}
+
+.sp-video-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sp-video-thumb {
+    position: relative;
+    width: 80px;
+    height: 60px;
+    min-width: 80px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.sp-video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8em;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sp-video-details h5 {
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* CTA Box */
+.sp-sidebar-cta {
+    background: #eff6ff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.sp-sidebar-cta i {
+    color: #1d4ed8;
+}
+
+.sp-cta-btn {
+    background: #1d4ed8 !important;
+    color: #fff !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sp-cta-btn:hover {
+    background: #6b91e0 !important;
+    color: #fff !important;
+}
+
+
+/* ========================================================= */
+/* --- 4. VIDEO MODAL STYLES (NEW - Full Screen Overlay) --- */
+/* ========================================================= */
+
+.sp-video-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95); /* Black transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above all other elements */
+    /* opacity and visibility are handled by React, but defining them here 
+       provides a fallback style. */
+    opacity: 1; /* React handles visibility/opacity state */
+    visibility: visible;
+}
+
+
+.sp-video-modal-content {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 90%;
+    max-height: 90%;
+    width: 800px; /* Max width for video container */
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.sp-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    z-index: 1010;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.sp-modal-close:hover {
+    opacity: 1;
+}
+
+.sp-modal-title {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-right: 40px; /* Space for close button */
+}
+
+.sp-modal-video-wrapper {
+    position: relative;
+    width: 100%;
+    /* 16:9 Aspect Ratio (9/16 * 100 = 56.25) */
+    padding-top: 56.25%; 
+}
+
+.sp-modal-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    display: block;
+}
+
+
+/* ========================================================= */
+/* --- RESPONSIVE DESIGN FIXES (Mobile First) --- */
+/* ========================================================= */
+
+/* Tablet (Max Width 1024px) */
+@media (max-width: 1024px) {
+
+    /* Main Layout becomes single column stack */
+    .sp-main-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Order sections for better flow: Focus -> Major Grid -> Video Gallery (moves to bottom) */
+    .sp-focus-wrapper {
+        order: 1;
+    }
+
+    .sp-middle-section {
+        order: 2;
+    }
+
+    .sp-video-gallery-sidebar {
+        order: 3;
+        padding-left: 0;
+        border-left: none;
+    }
+
+    /* Video Gallery moves to the bottom, displaying horizontally */
+    .sp-video-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .sp-video-item {
+        flex-direction: column;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .sp-video-thumb {
+        width: 100%;
+        height: 100px;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .sp-video-details {
+        text-align: center;
+    }
+    
+    /* Modal adjustment for Tablet */
+    .sp-video-modal-content {
+        width: 90%;
+    }
+}
+
+/* Mobile (Max Width 768px) */
+@media (max-width: 768px) {
+    .sp-container {
+        padding: 20px 10px;
+    }
+
+    .sp-focus-card {
+        height: 250px;
+    }
+
+    .sp-focus-title {
+        font-size: 1.5em;
+    }
+
+    .sp-focus-summary {
+        display: none;
+        /* Hide summary to save space on small phones */
+    }
+
+    /* Major Grid stacks vertically */
+    .sp-major-grid-2x2 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Video list stacks vertically again for phone screen */
+    .sp-video-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .sp-video-item {
+        flex-direction: row;
+        border-bottom: 1px dashed #e5e7eb;
+        padding-bottom: 15px;
+        text-align: left;
+    }
+
+    .sp-video-thumb {
+        width: 100px;
+        height: 70px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .sp-video-details {
+        text-align: left;
+    }
+    
+    /* Modal adjustment for Mobile */
+    .sp-video-modal-content {
+        max-width: 95%;
+        padding: 10px;
+    }
+    .sp-modal-title {
+        font-size: 1em;
+    }
+    .sp-modal-close {
+        font-size: 1.5em;
+        right: 15px;
+    }
+}
+/* --- SPORT DETAIL VIEW STYLES --- */
+.sp-detail-view {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: spFadeIn 0.4s ease-out;
+}
+
+@keyframes spFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sp-back-btn {
+    background: #1a202c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.sp-detail-hero-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.sp-detail-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.sp-detail-meta {
+    color: #718096;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.sp-detail-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2d3748;
+}
+
+.sp-detail-summary {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 20px;
+}

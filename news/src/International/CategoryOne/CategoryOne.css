@@ -1,0 +1,318 @@
+/* ============================================================
+   CATEGORY ONE – PREMIUM MODERN NEWS THEME
+   Clean | Sharp | Professional | High-End Look
+============================================================ */
+
+/* GLOBAL */
+.category-one-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Inter", "Roboto", sans-serif;
+    background: #fafafa;
+    color: #222;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all .25s ease;
+}
+
+/* HEADER */
+.main-header {
+    margin-bottom: 45px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.sub-heading {
+    font-size: 1.12rem;
+    color: #555;
+}
+
+/* GRID LAYOUT */
+.main-content-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 40px;
+}
+
+/* SECTION TITLES */
+.section-heading {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 6px solid #0a4ea3;
+}
+
+.secondary-heading {
+    border-left-color: #b3b3b3;
+}
+
+/* ============================================================
+   NEWS CARDS – PREMIUM GLASS + SHADOW + ROUNDED
+============================================================ */
+.news-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image */
+.card-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.feature-card .card-image {
+    height: 420px;
+    border-bottom: 4px solid #0a4ea3;
+}
+
+/* Card Body */
+.card-content {
+    padding: 20px 22px;
+}
+
+/* Category Tag */
+.news-category {
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    font-size: 0.72rem;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+/* Category Colors */
+.category-it { background: #27ae60; }
+.category-business { background: #0a4ea3; }
+.category-marketing { background: #8e44ad; }
+
+/* Title */
+.card-title-link h2, .clickable-news-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+.feature-card .card-title-link h2, .feature-card .clickable-news-title {
+    font-size: 2.3rem;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+.clickable-news-title:hover {
+    color: #0a4ea3;
+}
+
+/* Summary */
+.card-summary {
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Meta */
+.news-meta {
+    margin-top: 12px;
+    display: flex;
+    gap: 15px;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.news-meta i {
+    color: #0a4ea3;
+    margin-right: 5px;
+}
+
+/* ============================================================
+   GRID CARDS
+============================================================ */
+.two-column-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+/* ============================================================
+   SIDEBAR – PREMIUM BLUE GLASS EFFECT
+============================================================ */
+.right-sidebar-state {
+    background: linear-gradient(145deg, #e8f3ff, #ffffff);
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-state-heading {
+    font-size: 1.5rem;
+    color: #0a4ea3;
+    font-weight: 700;
+    border-left: 6px solid #0a4ea3;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+/* State Links */
+.state-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.state-link {
+    padding: 12px 14px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all .25s;
+}
+
+.state-link:hover {
+    background: #0a4ea3;
+    color: white;
+    font-weight: 600;
+    border-color: #0a4ea3;
+    transform: translateX(5px);
+}
+
+/* AD Box */
+.sidebar-ad-block {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px dashed #bfbfbf;
+    text-align: center;
+    color: #666;
+}
+
+/* ============================================================
+   DETAIL PAGE STYLES (NEW UPDATE)
+============================================================ */
+.back-btn {
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #0a4ea3;
+    transform: translateX(-5px);
+}
+
+.news-detail-view {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-header h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.detail-main-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin: 30px 0;
+}
+
+.detail-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.lead-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    border-left: 4px solid #0a4ea3;
+    padding-left: 20px;
+}
+
+.detail-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 992px) {
+    .main-content-layout { grid-template-columns: 1fr; }
+    .two-column-cards { grid-template-columns: 1fr; }
+    .feature-card .card-image { height: 330px; }
+    .detail-header h1 { font-size: 2.2rem; }
+    .news-detail-view { padding: 20px; }
+}
+
+@media (max-width: 600px) {
+    .main-header h1 { font-size: 2.2rem; }
+    .card-image { height: 160px; }
+    .feature-card .card-image { height: 250px; }
+    .detail-header h1 { font-size: 1.8rem; }
+}
+.social-icons-grid a:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.secondary-heading {
+  border-left: 5px solid #ff4d4d;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+}

@@ -1,0 +1,572 @@
+/* GalleryPost.css - Mixed Standard Post Layout with Gallery Slider */
+
+/* ⭐ Sabse pehle ye fix add kiya hai taaki padding width ko na badhaye */
+* {
+    box-sizing: border-box;
+}
+
+/* Global Container and Layout */
+.gp-page-container {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #1a202c;
+    overflow-x: hidden; /* Phone par side scroll rokne ke liye */
+}
+
+.gp-main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- MAIN CONTENT (LEFT) --- */
+.gp-main-content {
+    padding: 30px;
+    min-width: 0; /* Grid item overflow fix */
+}
+
+.gp-post-title {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Title bahut bada ho to line break ho jaye */
+}
+
+/* ⭐ Post Meta Styling (Standard Post Style) */
+.gp-post-meta {
+    display: flex;
+    flex-wrap: wrap; /* Phone par meta items niche shift ho jayein */
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0; 
+    font-size: 0.9em;
+    color: #718096;
+}
+
+.gp-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gp-meta-item i {
+    color: #dc2626; /* Red icon color */
+}
+
+.gp-meta-separator {
+    color: #a0aec0; 
+}
+
+/* --- Gallery Slider Styles (Unique to GalleryPost) --- */
+
+.gp-gallery-slider-wrapper {
+    margin-bottom: 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    width: 100%;
+}
+
+.gp-slider-main-display {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Main display height */
+    background-size: cover;
+    background-position: center;
+    background-color: #ccc;
+}
+
+.gp-slider-controls-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.gp-slider-arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background 0.2s;
+}
+
+.gp-slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gp-slider-thumbs-nav {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    overflow-x: auto; /* Thumbnails mobile par ungli se slide honge */
+    -webkit-overflow-scrolling: touch;
+}
+
+.gp-slider-thumb-item {
+    flex-shrink: 0;
+    width: 80px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+.gp-slider-thumb-item.active,
+.gp-slider-thumb-item:hover {
+    border-color: #dc2626;
+    opacity: 1;
+}
+
+/* Content Area */
+.gp-post-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 30px;
+    word-wrap: break-word; /* Text screen se bahar na nikle */
+}
+
+/* --- Social Share & Tags (Standard Post Style) --- */
+.gp-post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Mobile fix */
+    gap: 15px;
+}
+
+.gp-social-share {
+    display: flex;
+    gap: 15px;
+}
+
+.gp-social-icon {
+    font-size: 1.2em;
+    color: #718096;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.gp-social-icon:hover {
+    color: #dc2626;
+}
+
+.gp-tags-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    flex-wrap: wrap; /* Tags mobile par line change karein */
+}
+
+.gp-tag-label {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.gp-tag-item {
+    text-decoration: none;
+    color: #dc2626;
+    padding: 2px 8px;
+    border: 1px solid #dc2626;
+    border-radius: 15px;
+    transition: background-color 0.2s;
+}
+
+.gp-tag-item:hover {
+    background-color: #fef2f2;
+}
+
+/* --- Comments Section (Standard Post Style) --- */
+.gp-comments-section {
+    padding-top: 20px;
+}
+
+.gp-comments-count {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+.gp-comment-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.gp-comment-avatar {
+    flex-shrink: 0; /* Avatar mobile par chota na ho */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #a0aec0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2em;
+    align-self: flex-start;
+}
+
+.gp-comment-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.gp-comment-author {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.gp-comment-date {
+    font-size: 0.85em;
+    color: #718096;
+}
+
+.gp-comment-text {
+    font-size: 0.95em;
+    color: #4a5568;
+    margin: 5px 0 10px 0;
+}
+
+.gp-comment-reply-btn {
+    background: #f7f7f7;
+    color: #dc2626;
+    border: 1px solid #dc2626;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Reply Form */
+.gp-reply-form h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.gp-reply-form p {
+    font-size: 0.9em;
+    color: #718096;
+    margin-bottom: 20px;
+}
+
+.gp-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.gp-reply-form input[type="text"], 
+.gp-reply-form input[type="email"],
+.gp-reply-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.gp-form-row input {
+    flex: 1;
+    min-width: 0; /* Mobile form fix */
+}
+
+.gp-post-comment-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* --- SIDEBAR (RIGHT) --- */
+.gp-sidebar {
+    padding: 30px 15px;
+}
+
+.gp-widget {
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.gp-widget-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dc2626;
+    display: inline-block;
+}
+
+/* Recent Posts Widget (Standard Post Style) */
+.gp-recent-posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.gp-recent-post-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    border-bottom: 1px dotted #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.gp-recent-post-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.gp-recent-post-title {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #1a202c;
+    margin: 0;
+}
+
+.gp-recent-post-date {
+    font-size: 0.75em;
+    color: #718096;
+    display: block;
+    margin-top: 3px;
+}
+
+/* Categories Dropdown */
+.gp-category-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/* ⭐ Responsive Adjustments (The Fix) ⭐ */
+@media (max-width: 1024px) {
+    .gp-main-layout {
+        grid-template-columns: 1fr; /* Sidebar niche aa jayega */
+    }
+    .gp-main-content {
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    .gp-sidebar {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gp-page-container {
+        padding: 10px 5px; /* Mobile par padding kam ki */
+    }
+    .gp-post-title {
+        font-size: 1.5em; /* Heading phone par thodi choti */
+    }
+    .gp-slider-main-display {
+        height: 250px; /* Slider height phone par kam ki */
+    }
+    .gp-form-row {
+        flex-direction: column; /* Name aur Email ek ke niche ek honge */
+        gap: 15px;
+    }
+    .gp-post-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .gp-comment-item {
+        flex-direction: column; /* Avatar aur comment stacked honge mobile par */
+    }
+    .gp-meta-separator {
+        display: none; /* Phone par separator hide kiya space ke liye */
+    }
+}
+
+/* Comment Form Styling */
+.gp-comment-form-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+}
+
+.gp-comment-form-container h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.gp-comment-form-container p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.gp-comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gp-comment-form textarea, 
+.gp-comment-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.gp-comment-form textarea:focus, 
+.gp-comment-form input:focus {
+    border-color: #007bff;
+}
+
+.gp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gp-submit-btn {
+    background-color: #222;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    width: max-content;
+    transition: background 0.3s;
+}
+
+.gp-submit-btn:hover {
+    background-color: #007bff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .gp-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+/* Back Button Styling */
+.gp-back-btn {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #dc2626;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.gp-back-btn:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+}
+
+.gp-back-btn i {
+    font-size: 12px;
+}
+
+
+.gp-interaction-bar {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.gp-like-btn, .gp-unlike-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f1f1;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.gp-like-btn.active {
+    color: #007bff;
+    background: #e7f3ff;
+}
+
+.gp-unlike-btn.active {
+    color: #dc3545;
+    background: #ffeef0;
+}
+
+.gp-main-card-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.gp-card-dot {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.gp-card-dot.active {
+    background: #333;
+}

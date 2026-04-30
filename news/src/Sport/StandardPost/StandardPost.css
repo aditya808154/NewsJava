@@ -1,0 +1,356 @@
+/* StandardPost_DarkTheme.css - Light Theme (White Background) with Screenshot Layout */
+
+/* Global Container and Light Theme */
+.sp-page-container {
+    padding: 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff; /* White Background */
+    color: #1a202c; /* Dark text */
+    box-sizing: border-box; /* Added to prevent overflow */
+}
+
+/* Base Link Style */
+.sp-page-container a {
+    text-decoration: none;
+    color: #1a202c; 
+    transition: color 0.2s ease;
+}
+
+.sp-page-container a:hover {
+    color: #dc2626; /* Red hover for interaction */
+}
+
+/* --- MAIN LAYOUT (Two Columns) --- */
+.sp-main-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 40px;
+}
+
+/* --- 1. MAIN CONTENT (LEFT) --- */
+.sp-main-content {
+    line-height: 1.7;
+    font-size: 1.05em;
+    overflow: hidden; /* Prevent text spill on small screens */
+}
+
+/* Post Content Text */
+.sp-post-text {
+    margin-bottom: 30px;
+    color: #4a5568; /* Body text color */
+}
+
+.sp-post-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Post Meta Section */
+.sp-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    color: #718096;
+}
+
+/* Main Post Media */
+.sp-post-media-wrapper {
+    margin-bottom: 30px;
+}
+
+.sp-post-main-media {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+/* --- Post Footer (Social Share & Tags) --- */
+.sp-post-footer {
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sp-social-share {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Added for mobile */
+}
+
+.sp-social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    background-color: #333; 
+    transition: background-color 0.2s;
+}
+
+.sp-social-share .fa-facebook-f { background-color: #3b5998; }
+.sp-social-share .fa-twitter { background-color: #1da1f2; }
+.sp-social-share .fa-whatsapp { background-color: #25d366; }
+.sp-social-share .fa-envelope { background-color: #a0aec0; }
+.sp-social-share .fa-plus { background-color: #dc2626; } 
+
+.sp-social-icon:hover { opacity: 0.8; }
+
+.sp-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.sp-tag-label {
+    font-weight: 700;
+    color: #1a202c;
+    font-size: 1.1em;
+}
+
+.sp-tag-item {
+    background-color: #f7f7f7;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    cursor: pointer;
+    color: #1a202c;
+    font-weight: 500;
+}
+
+/* --- Small Image Grid Item --- */
+.sp-small-grid-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.sp-small-grid-thumb {
+    width: 120px;
+    height: 90px;
+    min-width: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.sp-small-grid-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 5px 0;
+    color: #1a202c;
+}
+
+.sp-small-grid-date { font-size: 0.8em; color: #718096; }
+
+/* --- Comments Section --- */
+.sp-comments-section { margin-top: 40px; }
+
+.sp-comments-count {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+    color: #1a202c;
+}
+
+.sp-comment-item {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sp-comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.sp-comment-author { font-weight: 700; color: #dc2626; margin-right: 10px; }
+.sp-comment-date { font-size: 0.8em; color: #718096; }
+.sp-comment-text { font-size: 0.95em; color: #4a5568; margin: 5px 0 10px 0; }
+
+.sp-comment-reply-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- Reply Form --- */
+.sp-reply-form { margin-top: 30px; }
+.sp-reply-form h3 { font-size: 1.5em; font-weight: 700; color: #1a202c; }
+
+.sp-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.sp-reply-form input,
+.sp-reply-form textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.sp-post-comment-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- 2. SIDEBAR (RIGHT) --- */
+.sp-sidebar { padding-left: 20px; }
+.sp-widget { margin-bottom: 30px; }
+.sp-widget-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.sp-recent-posts-list { list-style: none; padding: 0; }
+.sp-recent-post-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0; }
+.sp-recent-post-link-wrapper { display: flex; gap: 10px; }
+.sp-recent-post-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.sp-recent-post-title { font-size: 0.95em; line-height: 1.3; font-weight: 500; }
+
+.sp-category-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.sp-category-item-tile {
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    overflow: hidden;
+    color: white !important;
+}
+
+.sp-category-item-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.sp-category-name, .sp-category-count { position: relative; z-index: 2; }
+.sp-category-count { background: #fff; color: #333; padding: 2px 8px; border-radius: 50px; font-size: 0.8em; }
+
+.sp-category-select { width: 100%; padding: 10px; background-color: #f7f7f7; border: 1px solid #e2e8f0; border-radius: 4px; }
+
+/* Scroll Top Button */
+.sp-scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #dc2626;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 4px;
+    z-index: 999;
+}
+
+/* --- RESPONSIVE DESIGN (Updated for Phones) --- */
+@media (max-width: 1024px) {
+    .sp-main-layout {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    .sp-sidebar {
+        padding-left: 0;
+        padding-top: 30px;
+        border-top: 1px solid #e2e8f0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sp-page-container { padding: 20px 15px; }
+    .sp-post-title { font-size: 1.7em; }
+    .sp-post-meta { flex-wrap: wrap; gap: 10px; }
+    .sp-meta-separator { display: none; }
+    .sp-form-row { flex-direction: column; gap: 15px; }
+    .sp-comment-item { flex-direction: column; gap: 10px; }
+    .sp-small-grid-thumb { width: 80px; height: 60px; min-width: 80px; }
+}
+.sp-back-btn {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.sp-back-btn:hover {
+    background: #ff0000; /* Red color on hover */
+}
+.sp-nav-arrow {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.sp-nav-arrow:hover {
+    background: #0056b3;
+}
+
+.sp-reaction-bar button i {
+    margin-right: 8px;
+}

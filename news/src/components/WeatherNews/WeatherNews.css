@@ -1,0 +1,215 @@
+/* ======================================================= */
+/* WeatherNews.css - UNIQUE STYLES (SLIDER FIX INCLUDED) */
+/* ======================================================= */
+
+/* --- MAIN SECTION --- */
+.wthr-section {
+    padding: 60px 0;
+    background: #e9f5ff; /* Light sky blue background */
+}
+
+/* --- HEADING STYLE --- */
+.wthr-heading {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.wthr-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #004d99; /* Deep blue text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.wthr-heading hr {
+    width: 80px;
+    height: 5px;
+    background: #007bff; /* Primary Blue line */
+    border: none;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* --- MAIN LAYOUT CONTAINER --- */
+.wthr-main-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 10px;
+}
+
+/* ------------------------------------ */
+/* --- TODAY WEATHER BOX (Left Side) --- */
+/* ------------------------------------ */
+.wthr-today-box {
+    flex: 0 0 350px; /* Fixed width for Today's box on large screens */
+    padding: 30px;
+    background: linear-gradient(135deg, #007bff 0%, #005cbf 100%); /* Blue gradient */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.wthr-today-box:hover {
+    transform: translateY(-5px);
+}
+
+.wthr-icon-big {
+    font-size: 100px;
+    line-height: 1;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.wthr-today-details {
+    margin-top: 15px;
+}
+
+.wthr-temp {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.wthr-condition {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.wthr-city {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* ------------------------------------ */
+/* --- WEEKLY FORECAST SLIDER (Right Side) --- */
+/* ------------------------------------ */
+.wthr-forecast-slider {
+    flex-grow: 1;
+    /* ⭐ SLIDER FIX: This line is crucial when Slick is inside a Flex container. */
+    min-width: 0; 
+    align-self: stretch; 
+}
+
+/* Adjust Slick Slider Item Padding */
+.wthr-forecast-slider .slick-list { margin: 0 -10px; }
+.wthr-forecast-slider .slick-slide > div { padding: 0 10px; }
+
+
+.wthr-day-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    /* display: flex !important; <--- Removed this, let slick manage display for slides */
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.wthr-day-card:hover {
+    background: #f0f7ff;
+    border: 2px solid #007bff;
+    transform: translateY(-3px);
+}
+
+.wthr-small-icon {
+    font-size: 50px;
+    line-height: 1;
+    color: #ffc107; /* Yellow for icons */
+    margin-bottom: 10px;
+}
+
+.wthr-day-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.wthr-day-temp {
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+}
+
+/* --- SLICK DOTS STYLING --- */
+.wthr-forecast-slider .slick-dots { 
+    bottom: -40px; 
+}
+.wthr-forecast-slider .slick-dots li.slick-active button:before { 
+    color: #007bff; /* Active dot blue */
+}
+
+
+/* ------------------------------------ */
+/* --- RESPONSIVENESS --- */
+/* ------------------------------------ */
+
+/* Tablet and Smaller Desktop */
+@media (max-width: 992px) {
+    .wthr-main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .wthr-today-box {
+        flex: 0 0 auto;
+        width: 90%;
+        max-width: 450px;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: space-around;
+    }
+    
+    .wthr-icon-big {
+        font-size: 80px;
+    }
+    .wthr-temp {
+        font-size: 50px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .wthr-section {
+        padding: 40px 0;
+    }
+    .wthr-heading h2 {
+        font-size: 28px;
+    }
+    
+    .wthr-today-box {
+        width: 100%;
+        padding: 25px 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .wthr-icon-big {
+        margin-bottom: 5px;
+    }
+    .wthr-today-details {
+        margin-top: 0;
+    }
+    .wthr-forecast-slider .slick-list { margin: 0; }
+    .wthr-forecast-slider .slick-slide > div { padding: 0 5px; }
+
+}
